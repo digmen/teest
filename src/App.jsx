@@ -11,9 +11,9 @@ const App = () => {
           position="0 1 -3"
           rotation="0 45 0"
           color="#4CC3D9"
-          depth="2"
-          height="2"
-          width="2"
+          depth="5"
+          height="5"
+          width="5"
         ></a-box>
       </a-marker>
 
