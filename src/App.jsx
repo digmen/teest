@@ -1,20 +1,18 @@
-import React from "react";
-import "aframe";
-import "aframe-ar";
+import React from 'react';
 
-export default function App() {
+const App = () => {
   return (
-    <a-scene embedded xr="mode: immersive-ar" arjs="sourceType: webcam;">
-      <a-camera position="0 1.6 0" look-controls="pointerLockEnabled: true">
-        <a-cursor></a-cursor>
-      </a-camera>
-
-      <a-box color="blue" position="0 1 -3" rotation="0 45 0" scale="0.5 0.5 0.5"></a-box>
-
+    <a-scene embedded>
+      {/* Marker для AR */}
       <a-marker preset="hiro">
-        <a-box color="red"></a-box>
+        {/* 3D-модель */}
+        <a-box position="0 0.5 0" rotation="0 45 0" color="#4CC3D9"></a-box>
       </a-marker>
-      <a-sky color="#ECECEC"></a-sky>
+
+      {/* Камера */}
+      <a-entity camera></a-entity>
     </a-scene>
   );
-}
+};
+
+export default App;
