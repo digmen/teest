@@ -15,12 +15,6 @@ const App = () => {
           height="2"
           width="2"
         ></a-box>
-        {/* Указатель: линия */}
-        <a-entity
-          geometry="primitive: line; vertices: 0 0 0, 0 2 0"
-          material="color: red; lineWidth: 5"
-          position="0 0 0"
-        ></a-entity>
       </a-marker>
 
       {/* Камера */}
