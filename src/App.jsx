@@ -9,7 +9,7 @@ const App = () => {
         {/* Камера с управлением через движение телефона */}
         <a-entity
           camera
-          look-controls="pointerLockEnabled: false"
+          look-controls="pointerLockEnabled: true"
           wasd-controls="enabled: true" // Включаем управление WASD
           position="0 1.6 0"
         ></a-entity>
