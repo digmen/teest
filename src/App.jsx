@@ -10,9 +10,8 @@ const App = () => {
         <a-entity
           camera
           look-controls="pointerLockEnabled: false"
+          wasd-controls="enabled: true" // Включаем управление WASD
           position="0 1.6 0"
-          rotation="0 0 0"
-          wasd-controls="enabled: false"  // Отключаем управление WASD
         ></a-entity>
 
         {/* Куб на фиксированной позиции */}
