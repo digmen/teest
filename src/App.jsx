@@ -1,29 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "aframe";
-import "aframe-look-at-component";
+import "aframe-ar";
 
 export default function App() {
-  useEffect(() => {
-  }, []);
-
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
-      <a-scene
-        vr-mode-ui="enabled: false"
-        embedded
-        arjs="sourceType: webcam; trackingMethod: best;"
-        renderer="logarithmicDepthBuffer: true;"
-      >
-        <a-camera gps-camera rotation-reader></a-camera>
+    <a-scene embedded xr="mode: immersive-ar" arjs="sourceType: webcam;">
+      <a-camera position="0 1.6 0" look-controls="pointerLockEnabled: true">
+        <a-cursor></a-cursor>
+      </a-camera>
 
-        <a-entity
-          gps-entity-place="latitude: 40.748817; longitude: -73.985428;"
-          gltf-model="url(https://cdn.aframe.io/test-models/models/gltf/kart/kart.gltf)"
-          scale="5 5 5"
-          look-at="[gps-camera]"
-        >
-        </a-entity>
-      </a-scene>
-    </div>
+      <a-box color="blue" position="0 1 -3" rotation="0 45 0" scale="0.5 0.5 0.5"></a-box>
+
+      <a-marker preset="hiro">
+        <a-box color="red"></a-box>
+      </a-marker>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
   );
 }
