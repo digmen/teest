@@ -1,34 +1,28 @@
 import 'aframe';
 import 'aframe-ar';
-import { Entity, Scene } from 'aframe-react';
 import React from 'react';
 
 const App = () => {
   return (
     <div className="app-container">
-      <Scene embedded arjs>
-        {/* Камера для AR */}
-        <Entity camera look-controls="pointerLockEnabled: false" />
+      <a-scene embedded arjs>
+        {/* Камера с управлением через движение телефона */}
+        <a-entity
+          camera
+          look-controls="pointerLockEnabled: false"
+          position="0 1.6 0"
+          rotation="0 0 0"
+          wasd-controls="enabled: false"  // Отключаем управление WASD
+        ></a-entity>
 
         {/* Куб на фиксированной позиции */}
-        <Entity
-          geometry={{ primitive: 'box' }}
-          material={{ color: 'red' }}
-          position={{ x: 0, y: 0, z: -5 }}
-        />
+        <a-box color="red" position="0 0 -5"></a-box>
 
         {/* AR.js для отслеживания маркеров */}
-        <Entity
-          marker={{ preset: 'hiro' }}
-          position={{ x: 0, y: 0, z: 0 }}
-        >
-          <Entity
-            geometry={{ primitive: 'box' }}
-            material={{ color: 'blue' }}
-            position={{ x: 0, y: 0, z: 0 }}
-          />
-        </Entity>
-      </Scene>
+        <a-marker preset="hiro">
+          <a-box color="blue" position="0 0 0"></a-box>
+        </a-marker>
+      </a-scene>
     </div>
   );
 };
