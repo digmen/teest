@@ -6,7 +6,12 @@ const App = () => {
       {/* Marker для AR */}
       <a-marker preset="hiro">
         {/* 3D-модель */}
-        <a-box position="0 0.5 0" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-entity
+          gltf-model="url(https://sketchfab.com/3d-models/tube-man-looping-animated-rigged-682bba00f6ec4fef8ee17fb1535d7741)" // Замените на путь к вашей модели
+          scale="0.5 0.5 0.5"
+          position="0 0 0"
+          rotation="0 0 0"
+        ></a-entity>
       </a-marker>
 
       {/* Камера */}
