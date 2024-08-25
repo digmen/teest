@@ -1,5 +1,6 @@
+import 'aframe';
+import { Entity, Scene } from 'aframe-react';
 import React from 'react';
-import { AScene, AEntity, ABox, ACamera, Scene, Entity } from 'aframe-react';
 
 const App = () => {
   return (
