@@ -6,21 +6,21 @@ const App = () => {
   return (
     <div className="app-container">
       <a-scene embedded arjs>
-        {/* Камера с управлением через движение телефона */}
+        {/* Камера с контролем для перемещения с помощью гироскопа */}
         <a-entity
           camera
-          look-controls="pointerLockEnabled: true"
-          wasd-controls="enabled: true" // Включаем управление WASD
+          look-controls="pointerLockEnabled: false"
           position="0 1.6 0"
         ></a-entity>
 
-        {/* Куб на фиксированной позиции */}
-        <a-box color="red" position="0 0 -5"></a-box>
-
-        {/* AR.js для отслеживания маркеров */}
+        {/* AR-маркер для фиксирования куба */}
         <a-marker preset="hiro">
-          <a-box color="blue" position="0 0 0"></a-box>
+          <a-box color="red" position="0 0 0" scale="1 1 1"></a-box>
         </a-marker>
+
+        {/* Дополнительные элементы */}
+        <a-light type="ambient" color="#888"></a-light>
+        <a-light type="directional" position="-1 2 1" target="#box"></a-light>
       </a-scene>
     </div>
   );
