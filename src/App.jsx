@@ -1,25 +1,25 @@
-// src/App.jsx
 import React from 'react';
+import { AScene, AEntity, ABox, ACamera } from 'aframe-react';
 
 const App = () => {
   return (
-    <a-scene embedded>
+    <AScene>
       {/* Marker для AR */}
-      <a-marker preset="hiro">
+      <AEntity marker="preset: hiro">
         {/* Простой 3D-объект: большой куб */}
-        <a-box
-          position="0 1 -3"
+        <ABox
+          position="0 0.5 -3"
           rotation="0 45 0"
           color="#4CC3D9"
-          depth="5"
-          height="5"
-          width="5"
-        ></a-box>
-      </a-marker>
+          depth="2"
+          height="2"
+          width="2"
+        />
+      </AEntity>
 
       {/* Камера */}
-      <a-entity camera></a-entity>
-    </a-scene>
+      <ACamera />
+    </AScene>
   );
 };
 
